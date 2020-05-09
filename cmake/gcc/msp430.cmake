@@ -6,12 +6,13 @@ set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 
 # Find the toolchain
-find_program(MSP_CC msp430-gcc)
-find_program(MSP_CXX msp430-g++)
-find_program(MSP_NM msp430-nm)
-find_program(MSP_OBJCOPY msp430-objcopy)
-find_program(MSP_SIZE msp430-size)
-find_program(MSP_OBJDUMP msp430-objdump)
+find_path(MSP_INCLUDEPATH msp430.h)
+find_program(MSP_CC NAMES msp430-elf-gcc msp430-gcc)
+find_program(MSP_CXX NAMES msp430-elf-g++ msp430-g++)
+find_program(MSP_NM NAMES msp430-elf-nm msp430-nm)
+find_program(MSP_OBJCOPY NAMES msp430-elf-objcopy msp430-objcopy)
+find_program(MSP_SIZE NAMES msp430-elf-size msp430-size)
+find_program(MSP_OBJDUMP NAMES msp430-elf-objdump msp430-objdump)
 
 set(MSP_WARN
   "-Wall -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-align -Wsign-compare -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wunused"
@@ -22,11 +23,11 @@ set(MSP_DISABLED_BUILTINS
   CACHE STRING "Disabled Builtins")
 
 set(MSP_CFLAGS
-  "-mmcu=${MSP_MCU} -g -fdata-sections -ffunction-sections -fverbose-asm ${MSP_DISABLED_BUILTINS} ${MSP_WARN}" 
+  "-mmcu=${MSP_MCU} -isystem ${MSP_INCLUDEPATH} -g -fdata-sections -ffunction-sections -fverbose-asm ${MSP_DISABLED_BUILTINS} ${MSP_WARN}"
   CACHE STRING "MSP compilation flags")
 
 set(MSP_LFLAGS
-  "-mmcu=${MSP_MCU} -Wl,--gc-sections"
+  "-mmcu=${MSP_MCU} -Wl,-L${MSP_INCLUDEPATH} -Wl,--gc-sections"
   CACHE STRING "MSP linker Flags")
 
 set(CMAKE_CXX_LINK_EXECUTABLE

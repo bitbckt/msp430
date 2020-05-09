@@ -47,6 +47,9 @@ BUILDING
       cmake ..
       make
 
+  Pass -DCMAKE_PREFIX_PATH=<PATH> to cmake to search for a toolchain
+  installation at <PATH>.
+
 HOMEPAGE AND SOURCE REPOSITORY
 
   The MSP Example web page is at:
