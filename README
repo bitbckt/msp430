@@ -1,0 +1,65 @@
+                      Texas Instruments MSP Example
+                Written by Brandon Mitchell <brandon@thewholedoubt.com>
+
+  This is free and unencumbered software released into the public domain.
+
+  Anyone is free to copy, modify, publish, use, compile, sell, or
+  distribute this software, either in source code form or as a compiled
+  binary, for any purpose, commercial or non-commercial, and by any
+  means.
+
+  In jurisdictions that recognize copyright laws, the author or authors
+  of this software dedicate any and all copyright interest in the
+  software to the public domain. We make this dedication for the benefit
+  of the public at large and to the detriment of our heirs and
+  successors. We intend this dedication to be an overt act of
+  relinquishment in perpetuity of all present and future rights to this
+  software under copyright law.
+
+  Unless you really want to, do not even mention that the copied content
+  originates from this skeleton library. Its sole purpose is to be copied
+  into other projects.
+
+  The above statements apply to all content in this skeleton library, even
+  when the LICENSE files, or the headers in the files state otherwise,
+  they are just common examples.
+
+DESCRIPTION
+
+  This package serves as a template for building firmware in C,
+  intended for execution on Texas Instrument MSP430 devices.
+
+REQUIREMENTS
+
+  Everything requires a C compiler to build and expects an ISO C99 or
+  later C compiler and libraries with support for the MSP line of
+  devices.
+
+  To build firmware using this project, you will need CMake 3.1 or
+  later.
+
+BUILDING
+
+  You can build the example with:
+
+      mkdir build
+      cd build
+      cmake ..
+      make
+
+HOMEPAGE AND SOURCE REPOSITORY
+
+  The MSP Example web page is at:
+
+      http://github.com/bitbckt/msp430
+
+  The MSP Example is maintained using Git.  You can access the current source
+  by cloning the repository at:
+
+      git://github.com/bitbckt/msp430.git
+
+  or view the repository via the web at:
+
+      http://github.com/bitbckt/msp430
+
+  Please send any bug reports, patches, or questions to brandon@thewholedoubt.com.
