@@ -22,7 +22,7 @@ set(MSP_DISABLED_BUILTINS
   CACHE STRING "Disabled Builtins")
 
 set(MSP_CFLAGS
-  "-mmcu=${MSP_MCU} -isystem ${MSP_INCLUDEPATH} -g -fdata-sections -ffunction-sections -fverbose-asm ${MSP_DISABLED_BUILTINS} ${MSP_WARN}"
+  "-mmcu=${MSP_MCU} -isystem ${MSP_INCLUDEPATH} -g -O3 -fdata-sections -ffunction-sections -fverbose-asm ${MSP_DISABLED_BUILTINS} ${MSP_WARN}"
   CACHE STRING "MSP compilation flags")
 
 set(MSP_LFLAGS
