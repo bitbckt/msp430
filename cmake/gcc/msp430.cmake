@@ -15,7 +15,7 @@ find_program(MSP_SIZE NAMES msp430-elf-size msp430-size)
 find_program(MSP_OBJDUMP NAMES msp430-elf-objdump msp430-objdump)
 
 set(MSP_WARN
-  "-Wall -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-align -Wsign-compare -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wunused"
+  "-pedantic -Wall -Wextra -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wstrict-prototypes -Wshadow -Wformat-security -Wpointer-arith -Wbad-function-cast -Wcast-align -Wunused"
   CACHE STRING "Warnings")
 
 set(MSP_DISABLED_BUILTINS
