@@ -55,7 +55,7 @@ set_target_properties(
 
 if(DEFINED OBJDUMP)
   add_custom_target(
-    ${EXE}-${MSP_MCU}.lst ALL
+    ${LST} ALL
     ${OBJDUMP} -h -S ${ELF} > ${LST}
     DEPENDS ${ELF})
 endif()
@@ -68,7 +68,7 @@ if(DEFINED SIZE)
 endif()
 
 add_custom_target(
-  ${EXE}-${MSP_MCU}.sym ALL
+  ${SYM} ALL
   ${NM} -l -a -S -s --size-sort ${ELF} > ${SYM}
   DEPENDS ${ELF})
 
