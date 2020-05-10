@@ -27,7 +27,11 @@ set(MSP_CFLAGS
 
 set(MSP_LFLAGS
   "-mmcu=${MSP_MCU} -Wl,-L${MSP_INCLUDEPATH} -Wl,--gc-sections"
-  CACHE STRING "MSP linker Flags")
+  CACHE STRING "MSP linker flags")
+
+set(MSP_MAPFLAGS
+  "-Wl,-Map,"
+  CACHE STRING "MSP map flags")
 
 set(CMAKE_CXX_LINK_EXECUTABLE
   "<CMAKE_C_COMPILER> ${CMAKE_EXE_LINKER_FLAGS} <LINK_FLAGS> <OBJECTS> -o <TARGET> <LINK_LIBRARIES>"

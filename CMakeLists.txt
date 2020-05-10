@@ -50,7 +50,7 @@ set_target_properties(
   ${ELF} PROPERTIES
   C_STANDARD 99
   COMPILE_FLAGS "${MSP_CFLAGS}"
-  LINK_FLAGS "${MSP_LFLAGS} -Wl,-Map,${MAP}")
+  LINK_FLAGS "${MSP_LFLAGS} ${MSP_MAPFLAGS}${MAP}")
 
 if(DEFINED OBJDUMP)
   add_custom_target(
