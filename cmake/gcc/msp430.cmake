@@ -10,7 +10,6 @@ find_path(MSP_INCLUDEPATH msp430.h)
 find_program(MSP_CC NAMES msp430-elf-gcc msp430-gcc)
 find_program(MSP_CXX NAMES msp430-elf-g++ msp430-g++)
 find_program(MSP_NM NAMES msp430-elf-nm msp430-nm)
-find_program(MSP_OBJCOPY NAMES msp430-elf-objcopy msp430-objcopy)
 find_program(MSP_SIZE NAMES msp430-elf-size msp430-size)
 find_program(MSP_OBJDUMP NAMES msp430-elf-objdump msp430-objdump)
 
