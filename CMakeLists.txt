@@ -53,15 +53,19 @@ set_target_properties(
   COMPILE_FLAGS "${MSP_CFLAGS}"
   LINK_FLAGS "${MSP_LFLAGS} -Wl,-Map,${MAP}")
 
-add_custom_target(
-  ${EXE}-${MSP_MCU}.lst ALL
-  ${MSP_OBJDUMP} -h -S ${ELF} > ${LST}
-  DEPENDS ${ELF})
+if(DEFINED MSP_OBJDUMP)
+  add_custom_target(
+    ${EXE}-${MSP_MCU}.lst ALL
+    ${MSP_OBJDUMP} -h -S ${ELF} > ${LST}
+    DEPENDS ${ELF})
+endif()
 
-add_custom_target(
-  ${EXE}-${MSP_MCU}-size ALL
-  ${MSP_SIZE} ${ELF}
-  DEPENDS ${ELF})
+if(DEFINED MSP_SIZE)
+  add_custom_target(
+    ${EXE}-${MSP_MCU}-size ALL
+    ${MSP_SIZE} ${ELF}
+    DEPENDS ${ELF})
+endif()
 
 add_custom_target(
   ${EXE}-${MSP_MCU}.sym ALL
