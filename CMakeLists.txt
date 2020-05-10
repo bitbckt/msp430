@@ -23,8 +23,6 @@ project(example
 set(CMAKE_C_COMPILER   ${MSP_CC} CACHE STRING "" FORCE)
 set(CMAKE_CXX_COMPILER ${MSP_CXX} CACHE STRING "" FORCE)
 
-set(AR      ${MSP_AR}        CACHE STRING "" FORCE)
-set(AS      ${MSP_AS}        CACHE STRING "" FORCE)
 set(NM      ${MSP_NM}        CACHE STRING "" FORCE)  
 set(OBJDUMP ${MSP_OBJDUMP}   CACHE STRING "" FORCE)
 set(SIZE    ${MSP_SIZE}      CACHE STRING "" FORCE)
